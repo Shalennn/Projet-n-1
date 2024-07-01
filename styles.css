@@ -8,35 +8,77 @@ header {
     background-color: #4CAF50;
     color: white;
     padding: 1em 0;
+    position: relative;
     text-align: center;
 }
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: auto;
+}
+
 .titre-lien {
     color: #ffffff;
     text-decoration: none;
     font-size: xxx-large;
 }
 
-nav ul {
+nav {
+    position: relative;
+}
+
+.navigation-centree {
     list-style-type: none;
     padding: 0;
+    text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 1em;
+.navigation-centree li {
+    display: inline-block;
+    margin: 0 10px;
 }
 
-nav ul li a {
-    color: white;
+.navigation-centree li a {
+    display: inline-block;
     text-decoration: none;
-    font-size: x-large;
+    color: white;
+    font-weight: bold;
 }
+
+.navigation-droite {
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.navigation-droite li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.bouton-lien a img {
+    display: block; /* Assure que l'image occupe tout l'espace du lien */
+    width: auto; /* Ajuste la largeur de l'image automatiquement */
+    height: 50px; /* Ajuste la hauteur de l'image selon vos besoins */
+    border-radius: 5px;
+}
+
+.bouton-lien a:hover img {
+    opacity: 0.8; /* Ajoute un effet de transparence au survol */
+}
+
 
 .marquee {
     background-color: #ee8890;
     color: rgb(255, 255, 255);
     padding: 1px;
     white-space: nowrap;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -63,6 +105,7 @@ main {
 
 section {
     margin-bottom: 2em;
+    text-align: center; /* Centrer les h2 */
 }
 
 .product-container {
@@ -73,24 +116,32 @@ section {
 }
 
 .product {
+    width: 200px; /* Définir une largeur fixe pour chaque produit */
+    height: 250px; /* Définir une hauteur fixe pour chaque produit */
     border: 2px solid #ddd;
     padding: 1em;
     text-align: center;
-    width: 200px;
     box-sizing: border-box;
     border-radius: 10px;
     transition: transform 0.3s;
+    position: relative; /* Pour le positionnement des bordures */
 }
 
 .product:hover {
-    transform: scale(1.05);
+    transform: scale(1.1); /* Légère réduction de l'agrandissement au survol */
 }
 
 .product img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+    max-width: 100%; /* Assurer que l'image ne dépasse pas la largeur du conteneur */
+    max-height: 100%; /* Assurer que l'image ne dépasse pas la hauteur du conteneur */
+    object-fit: contain; /* Ajuster la taille des images tout en conservant leur rapport d'aspect */
+    border-radius: 8px; /* Ajouter une légère bordure arrondie aux images */
 }
+
+.product:nth-child(odd) {
+    margin-top: 2em; /* Disposer les images en quinconce */
+}
+
 footer {
     background-color: #333;
     color: white;
